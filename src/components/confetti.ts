@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 export function spawnConfetti(x: number, y: number) {
     const COLORS = [
         "#FF5C3A", "#FEE832", "#FDE047", "#72d672",
@@ -35,7 +33,7 @@ export function spawnConfetti(x: number, y: number) {
         const startTime = performance.now();
         const duration = 900 + Math.random() * 600;
 
-        function animate(now: number) {
+        const animate = (now: number) => {
             const elapsed = now - startTime;
             const t = elapsed / duration;
             if (t >= 1) {
@@ -43,13 +41,13 @@ export function spawnConfetti(x: number, y: number) {
                 return;
             }
             const cx = x + vx * t;
-            const cy = y + vy * t + 0.5 * 400 * t * t; // gravity
+            const cy = y + vy * t + 0.5 * 400 * t * t;
             el.style.left = `${cx}px`;
             el.style.top = `${cy}px`;
             el.style.opacity = `${1 - t}`;
             el.style.transform = `rotate(${rotation * t}deg) scale(${1 - t * 0.5})`;
             requestAnimationFrame(animate);
-        }
+        };
 
         requestAnimationFrame(animate);
     }

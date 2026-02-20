@@ -19,7 +19,7 @@ export default function ComparisonSection() {
         >
             <div className="mx-auto max-w-3xl px-4">
                 <p className="mb-2 text-center text-sm font-semibold uppercase tracking-widest text-orange-500">
-                    The numbers don't lie
+                    The numbers don&apos;t lie
                 </p>
                 <h2 className="mb-12 text-center text-5xl font-black uppercase text-sky-950 dark:text-white">
                     Fizzi vs Regular Soda
@@ -38,8 +38,8 @@ export default function ComparisonSection() {
                         <div
                             key={row.feature}
                             className={`grid grid-cols-3 items-center px-6 py-4 ${i % 2 === 0
-                                    ? "bg-white dark:bg-sky-900"
-                                    : "bg-yellow-50 dark:bg-sky-950"
+                                ? "bg-white dark:bg-sky-900"
+                                : "bg-yellow-50 dark:bg-sky-950"
                                 }`}
                         >
                             <span className="font-semibold text-sky-950 dark:text-sky-200">
